@@ -45,7 +45,7 @@ that blends creativity with engineering precision.
 ### 📘 Hospital Management System
 
 A structured and efficient hospital management solution.\
-**Tech:** Vibe Code, C, System Design, Database Concepts\
+**Tech:** C, System Design, Database Concepts\
 **GitHub:**
 https://github.com/mushahidd/C-Project-Hospital-Management-System
 
@@ -54,7 +54,7 @@ https://github.com/mushahidd/C-Project-Hospital-Management-System
 ### 🏢 ERP System
 
 Enterprise-grade ERP system following OOP and design patterns.\
-**Tech:** Vibe Code, Java, OOP, MySQL\
+**Tech:** Java, OOP, MySQL\
 **GitHub:** https://github.com/mushahidd/ERP_Java
 
 ------------------------------------------------------------------------
