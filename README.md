@@ -42,7 +42,7 @@ that blends creativity with engineering precision.
 
 ## 🚀 Project Timeline
 
-### 📘 1st Semester --- Hospital Management System
+### 📘 Hospital Management System
 
 A structured and efficient hospital management solution.\
 **Tech:** Vibe Code, C, System Design, Database Concepts\
@@ -51,7 +51,7 @@ https://github.com/mushahidd/C-Project-Hospital-Management-System
 
 ------------------------------------------------------------------------
 
-### 🏢 3rd Semester --- ERP System
+### 🏢 ERP System
 
 Enterprise-grade ERP system following OOP and design patterns.\
 **Tech:** Vibe Code, Java, OOP, MySQL\
@@ -59,7 +59,7 @@ Enterprise-grade ERP system following OOP and design patterns.\
 
 ------------------------------------------------------------------------
 
-### 🧾 5th Semester --- Business Platform
+### 🧾 Business Platform
 
 A modern business platform built with FastAPI and PostgreSQL.\
 **Tech:** Vibe Code, Python, FastAPI, Jinja, PostgreSQL\
