@@ -40,54 +40,6 @@ that blends creativity with engineering precision.
 
 ------------------------------------------------------------------------
 
-## 🚀 Project Timeline
-
-### 📘 Hospital Management System
-
-A structured and efficient hospital management solution.\
-**Tech:** C, System Design, Database Concepts\
-**GitHub:**
-https://github.com/mushahidd/C-Project-Hospital-Management-System
-
-------------------------------------------------------------------------
-
-### 🏢 ERP System
-
-Enterprise-grade ERP system following OOP and design patterns.\
-**Tech:** Java, OOP, MySQL\
-**GitHub:** https://github.com/mushahidd/ERP_Java
-
-------------------------------------------------------------------------
-
-### 🧾 Business Platform
-
-A modern business platform built with FastAPI and PostgreSQL.\
-**Tech:** Vibe Code, Python, FastAPI, Jinja, PostgreSQL\
-**GitHub:** https://github.com/mushahidd/network
-
-------------------------------------------------------------------------
-
-## 🎓 Specializations
-
--   💡 Programming Fundamentals\
--   🧱 Object-Oriented Programming\
--   🗄️ Database Systems\
--   🤖 Artificial Intelligence\
--   🌐 Computer Networks\
--   🧵 Data Structures\
--   🖥️ Operating Systems
-
-------------------------------------------------------------------------
-
-## 🛠️ Skills
-
--   **Languages:** C, C++, Java, Python\
--   🌐 Full-Stack Development\
--   🧠 Creative "Vibe" Coding\
--   🗄️ Database Design (MySQL, PostgreSQL)
-
-------------------------------------------------------------------------
-
 ## ⚙️ Getting Started
 
 ### 📦 Prerequisites
