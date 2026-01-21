@@ -50,6 +50,49 @@ export default function ProjectsPage() {
         </div>
       ),
     },
+        {
+      title: "Student Utility Hub",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
+            A productivity web app designed for students to manage their academic schedules and resources efficiently.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-6">
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">📅 Timetable</span>
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">🎓 Student Tools</span>
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">⚡ Fast & Responsive</span>
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">🌐 Web App</span>
+        </div>
+          <div className="flex flex-wrap gap-3 mb-4">
+            <a 
+              href="https://student-utility-hub.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary dark:bg-secondary text-primary-foreground dark:text-secondary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 dark:hover:shadow-secondary/50 transition-all duration-300 font-semibold"
+            >
+              <Globe size={18} />
+              Live Demo
+              <ExternalLink size={16} />
+            </a>
+            <a 
+              href="https://github.com/mushahidd/timetable-summary" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:shadow-lg hover:shadow-secondary/50 transition-all duration-300 font-semibold"
+            >
+              <Github size={18} />
+              View Code
+              <ExternalLink size={16} />
+            </a>
+          </div>
+          <div className="mt-4 p-4 bg-neutral-900/50 dark:bg-neutral-900 border border-secondary/30 rounded-lg">
+            <p className="text-neutral-200 dark:text-neutral-100 text-xs md:text-sm break-words">
+              <span className="font-semibold text-secondary">Tech:</span> React, TypeScript, TailwindCSS, Vite, Vercel
+            </p>
+          </div>
+        </div>
+      ),
+    },
     {
       title: "Remote Laptop Control",
       content: (
