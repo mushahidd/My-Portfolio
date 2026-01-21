@@ -17,13 +17,11 @@ export default function SkillsPage() {
     'Programming Fundamentals',
     'Object Oriented Programming',
     'Database Systems (DBMS)',
+    'Operating Systems',
     'Data Structures',
     'Artificial Intelligence',
     'Computer Networks',
     'Information Security',
-    'Software Engineering',
-    'Digital Logic Design',
-    'Theory of Automata',
   ];
 
   const tools = [
