@@ -29,7 +29,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  I'm a 5th semester BS Computer Science student at SMIU, Karachi. I've built multiple full-stack applications — from AI-powered exam generators to remote device control systems — by leveraging modern AI tools alongside my core programming skills.
+                  I'm a 6th semester BS Computer Science student at SMIU, Karachi. I've built multiple full-stack applications from AI-powered exam generators to remote device control systems by leveraging modern AI tools alongside my core programming skills.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   With a strong foundation in C, C++, Java, Python, and MySQL, I don't just write code — I ship working products. I embrace AI-assisted development as a force multiplier, turning concepts into deployed applications faster while deepening my understanding of real-world software.
@@ -39,15 +39,15 @@ export default function HomePage() {
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-center gap-3">
                       <span className="text-secondary font-bold">→</span>
-                      Mobile App Development
+                      Cloud Computing
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="text-secondary font-bold">→</span>
-                      Operating Systems
+                      Cyber Security
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="text-secondary font-bold">→</span>
-                      Web Technologies
+                      Web Engineering
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="text-secondary font-bold">→</span>

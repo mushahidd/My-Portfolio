@@ -9,7 +9,7 @@ export default function EducationPage() {
   const academicJourney = [
     {
       year: '2025',
-      title: 'Junior Year - 5th Semester',
+      title: 'Junior Year',
       institution: 'BS Computer Science',
       description: 'Advancing into core specializations including Mobile App Development, Operating Systems, Web Technologies, and Computer Architecture.',
       status: 'ongoing',

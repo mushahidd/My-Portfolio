@@ -23,9 +23,9 @@ export default function ContactPage() {
     },
     {
       name: 'Email',
-      href: 'mailto:mushahidhussain451@gmail.com',
+      href: 'mailto:muhammadmushahid000@gmail.com',
       icon: Mail,
-      description: 'mushahidhussain451@gmail.com',
+      description: 'muhammadmushahid000@gmail.com',
       color: 'hover:shadow-accent/30',
     },
   ];
