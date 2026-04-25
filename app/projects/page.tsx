@@ -8,6 +8,119 @@ import { Github, ExternalLink, Globe } from "lucide-react";
 export default function ProjectsPage() {
   const timelineData = [
     {
+      title: "KhataLens",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
+            An AI-powered ledger management system for shopkeepers and small
+            business owners. Snap a photo of your handwritten Khata notebook and
+            Gemini AI extracts names, amounts, and statuses instantly — with a
+            RAG chatbot that answers questions in English or Roman Urdu, all
+            stored locally for full privacy.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-6">
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">
+              📸 AI-Powered OCR
+            </span>
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">
+              💬 RAG ChatBot
+            </span>
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">
+              📊 Recovery Analytics
+            </span>
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">
+              🔒 Local-First Privacy
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-3 mb-4">
+            <a
+              href="https://khata-lens.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary dark:bg-secondary text-primary-foreground dark:text-secondary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 dark:hover:shadow-secondary/50 transition-all duration-300 font-semibold"
+            >
+              <Globe size={18} />
+              Live Demo
+              <ExternalLink size={16} />
+            </a>
+            <a
+              href="https://github.com/Asadjafri9/KhataLens"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary dark:bg-secondary text-primary-foreground dark:text-secondary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 dark:hover:shadow-secondary/50 transition-all duration-300 font-semibold"
+            >
+              <Github size={18} />
+              View Code
+              <ExternalLink size={16} />
+            </a>
+          </div>
+          <div className="mt-4 p-4 bg-neutral-900/50 dark:bg-neutral-900 border border-secondary/30 rounded-lg">
+            <p className="text-neutral-200 dark:text-neutral-100 text-xs md:text-sm break-words">
+              <span className="font-semibold text-secondary">Tech:</span> React
+              18, TypeScript, Vite, Tailwind CSS, Framer Motion, FastAPI,
+              Python, SQLite, Supabase Auth, Gemini 2.0 Flash, OpenRouter
+            </p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "ChainPass",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
+            A blockchain-powered ticketing platform built for PSL-style events.
+            NFT tickets (ERC-721) eliminate fake tickets and scalping through
+            on-chain resale caps and automatic royalty routing — all backed by a
+            neon cyberpunk Next.js frontend and Solidity smart contracts.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-6">
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">
+              🎟️ NFT Ticketing
+            </span>
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">
+              ⛓️ On-Chain Anti-Scalping
+            </span>
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">
+              💸 Auto Royalty Split
+            </span>
+            <span className="px-2 py-1 text-xs bg-primary/10 dark:bg-secondary/20 text-primary dark:text-secondary-foreground rounded-full font-medium">
+              🏪 Resale Marketplace
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-3 mb-4">
+            <a
+              href="https://chain-pass-psl.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary dark:bg-secondary text-primary-foreground dark:text-secondary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 dark:hover:shadow-secondary/50 transition-all duration-300 font-semibold"
+            >
+              <Globe size={18} />
+              Live Demo
+              <ExternalLink size={16} />
+            </a>
+            <a
+              href="https://github.com/mushahidd/ChainPass"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary dark:bg-secondary text-primary-foreground dark:text-secondary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 dark:hover:shadow-secondary/50 transition-all duration-300 font-semibold"
+            >
+              <Github size={18} />
+              View Code
+              <ExternalLink size={16} />
+            </a>
+          </div>
+          <div className="mt-4 p-4 bg-neutral-900/50 dark:bg-neutral-900 border border-secondary/30 rounded-lg">
+            <p className="text-neutral-200 dark:text-neutral-100 text-xs md:text-sm break-words">
+              <span className="font-semibold text-secondary">Tech:</span>{" "}
+              Next.js 14, React 18, Ethers.js 6, Solidity 0.8.24, Hardhat,
+              OpenZeppelin, WireFluid Testnet
+            </p>
+          </div>
+        </div>
+      ),
+    },
+    {
       title: "AI Financial Co-Pilot",
       content: (
         <div>
@@ -65,6 +178,7 @@ export default function ProjectsPage() {
         </div>
       ),
     },
+
     {
       title: "SyncScript",
       content: (
