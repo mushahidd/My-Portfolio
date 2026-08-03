@@ -265,7 +265,7 @@ export default function ProjectsPage() {
           </div>
           <div className="flex flex-wrap gap-3 mb-4">
             <a
-              href="https://ai-exam-gen.vercel.app"
+              href="https://qraft-gen.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-primary dark:bg-secondary text-primary-foreground dark:text-secondary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 dark:hover:shadow-secondary/50 transition-all duration-300 font-semibold"
@@ -275,7 +275,7 @@ export default function ProjectsPage() {
               <ExternalLink size={16} />
             </a>
             <a
-              href="https://github.com/mushahidd/AI-Exam-Gen"
+              href="https://github.com/mushahidd/Qraft"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:shadow-lg hover:shadow-secondary/50 transition-all duration-300 font-semibold"
