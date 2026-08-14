@@ -8,23 +8,29 @@ import { GraduationCap, BookOpen, Award, Calendar } from 'lucide-react';
 export default function EducationPage() {
   const academicJourney = [
     {
+      year: '2026',
+      title: 'Senior',
+      institution: 'BS Computer Science',
+       description: 'Preparing for the final year of BS Computer Science, with a focus on Final Year Project (FYP), Analysis of Algorithms, and Software Quality Assurance & Software Testing.',
+      status: 'ongoing',
+    },
+    {
       year: '2025',
-      title: 'Junior Year',
+      title: 'Junior',
       institution: 'BS Computer Science',
       description: 'Advancing into core specializations including Mobile App Development, Operating Systems, Web Technologies, and Computer Architecture.',
-      status: 'ongoing',
-      gpa: '3.36',
+      status: 'completed',
     },
     {
       year: '2024',
-      title: 'Sophomore Year',
+      title: 'Sophomore',
       institution: 'Sindh Madressatul Islam University',
       description: 'Strengthened foundations in Data Structures, Artificial Intelligence, Database Systems, and Computer Networks.',
       status: 'completed',
     },
     {
       year: '2023',
-      title: 'Freshman Year',
+      title: 'Freshman',
       institution: 'BS Computer Science - Admitted',
       description: 'Started my journey in Computer Science. Built strong fundamentals in Programming, OOP, Mathematics, and Logic Design.',
       status: 'completed',
@@ -32,6 +38,9 @@ export default function EducationPage() {
   ];
 
   const relevantCourses = [
+    { name: 'Compiler Construction', semester: 'Sem 6' },
+    { name: 'Parallel & Distributed Computing', semester: 'Sem 6' },
+    { name: 'Cyber Security', semester: 'Sem 6' },
     { name: 'Operating Systems', semester: 'Sem 5' },
     { name: 'Mobile App Development', semester: 'Sem 5' },
     { name: 'Advanced DBMS', semester: 'Sem 4' },
