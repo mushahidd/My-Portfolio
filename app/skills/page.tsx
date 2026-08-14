@@ -6,32 +6,42 @@ import { motion } from "framer-motion";
 
 export default function SkillsPage() {
   const programmingLanguages = [
+    { name: 'Python', level: 85, description: 'Backend, AI/ML, automation, FastAPI' },
     { name: 'C', level: 90, description: 'System programming, data structures' },
     { name: 'C++', level: 85, description: 'OOP, competitive programming' },
     { name: 'Java', level: 85, description: 'Enterprise applications, OOP' },
-    { name: 'Python', level: 80, description: 'Backend, scripting, automation' },
-    { name: 'MySQL', level: 80, description: 'Database queries, ADBMS' },
+    { name: 'MySQL', level: 80, description: 'Database queries, DBMS' },
   ];
 
   const specializations = [
-    'Programming Fundamentals',
+    'Artificial Intelligence',
+    'LLM Integration & RAG',
+    'AI Agents & Automation',
+    'Full-Stack Development',
+    'Data Structures',
     'Object Oriented Programming',
     'Database Systems (DBMS)',
-    'Operating Systems',
-    'Data Structures',
-    'Artificial Intelligence',
-    'Computer Networks',
     'Information Security',
+  ];
+
+  const aiTools = [
+    { name: 'Claude Code', category: 'Agentic Coding' },
+    { name: 'Cursor', category: 'AI IDE' },
+    { name: 'Codex', category: 'AI Coding Agent' },
+    { name: 'Devin', category: 'Autonomous Agent' },
+    { name: 'GitHub Copilot', category: 'AI Assistant' },
+    { name: 'Antigravity', category: 'Agentic IDE' },
+    { name: 'OpenCode', category: 'AI Coding Agent' },
+    { name: 'Kiro', category: 'Agentic IDE' },
   ];
 
   const tools = [
     { name: 'Git & GitHub', category: 'Version Control' },
-    { name: 'VS Code', category: 'IDE' },
-    { name: 'Cursor AI', category: 'AI IDE' },
-    { name: 'MySQL', category: 'Database' },
-    { name: 'Vibe Coding', category: 'Development' },
-    { name: 'Vercel / Railway / Netlify', category: 'Hosting' },
-    { name: 'MS Office', category: 'Productivity' },
+    { name: 'FastAPI', category: 'Backend Framework' },
+    { name: 'React / Next.js', category: 'Frontend' },
+    { name: 'PostgreSQL / SQLite', category: 'Database' },
+    { name: 'Supabase', category: 'Backend as a Service' },
+    { name: 'Vercel / Railway', category: 'Hosting' },
   ];
 
   return (
@@ -111,8 +121,35 @@ export default function SkillsPage() {
           </div>
         </section>
 
-        {/* Tools & Technologies */}
+        {/* AI Development Tools */}
         <section className="py-16 px-4 md:px-8 bg-muted/30">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
+              AI Development Tools
+            </h2>
+            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+              AI-native IDEs and coding agents I use to ship products faster.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {aiTools.map((tool, idx) => (
+                <motion.div
+                  key={tool.name}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.05 }}
+                  viewport={{ once: true }}
+                  className="bg-card border border-border rounded-xl p-6 hover:border-secondary/50 transition-colors"
+                >
+                  <p className="text-foreground font-semibold mb-1">{tool.name}</p>
+                  <p className="text-muted-foreground text-sm">{tool.category}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Tools & Technologies */}
+        <section className="py-16 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
               Tools & Technologies
