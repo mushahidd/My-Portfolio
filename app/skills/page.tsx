@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/navbar";
 import { PageTransition } from "@/components/page-transition";
+import { Footer } from "@/components/footer";
 import { motion } from "framer-motion";
 
 export default function SkillsPage() {
@@ -171,6 +172,7 @@ export default function SkillsPage() {
             </div>
           </div>
         </section>
+        <Footer />
       </PageTransition>
     </div>
   );

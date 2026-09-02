@@ -23,10 +23,12 @@ function Hero() {
     return () => clearTimeout(timeoutId);
   }, [titleNumber, titles]);
 
+  // 100svh, not 100vh — on mobile the browser chrome makes 100vh taller than the
+  // visible area, which is what produced the scrollbar.
   return (
-    <div className="w-full min-h-screen bg-background dark:bg-background flex items-center">
+    <div className="w-full min-h-[100svh] bg-background flex items-center justify-center px-4 py-8">
       <div className="container mx-auto">
-        <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
+        <div className="flex gap-6 items-center justify-center flex-col">
           <div>
             <Button variant="secondary" size="sm" className="gap-4">
               <Code2 className="w-4 h-4" />
@@ -34,7 +36,7 @@ function Hero() {
             </Button>
           </div>
           <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-3xl tracking-tighter text-center font-semibold">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl max-w-3xl tracking-tighter text-center font-semibold">
               <span className="text-foreground">I'm a</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
@@ -63,7 +65,7 @@ function Hero() {
               <span className="text-foreground">developer building real-world projects</span>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
               I build projects with vibe code. I have good understanding in C, C++, Java, and Python. Explore my journey from freshman to junior, further more is upcoming...
             </p>
           </div>

@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/navbar";
 import { PageTransition } from "@/components/page-transition";
+import { Footer } from "@/components/footer";
 import { motion } from "framer-motion";
 import { GraduationCap, BookOpen, Award, Calendar } from 'lucide-react';
 
@@ -210,6 +211,7 @@ export default function EducationPage() {
             </div>
           </div>
         </section>
+        <Footer />
       </PageTransition>
     </div>
   );

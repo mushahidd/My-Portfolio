@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Remote Laptop Control">
+  <rect width="1600" height="900" fill="#1F1F1F"/>
+  <g stroke="#2C2C2C" stroke-width="1">
+    <path d="M0 150h1600M0 300h1600M0 450h1600M0 600h1600M0 750h1600"/>
+    <path d="M200 0v900M400 0v900M600 0v900M800 0v900M1000 0v900M1200 0v900M1400 0v900"/>
+  </g>
+
+  <!-- controlling machine -->
+  <g transform="translate(300 300)">
+    <rect x="0" y="0" width="330" height="210" rx="10" fill="#262626" stroke="#D9CBB8" stroke-width="3"/>
+    <rect x="26" y="30" width="150" height="12" rx="6" fill="#D9CBB8"/>
+    <rect x="26" y="60" width="240" height="9" rx="4.5" fill="#3D3D3D"/>
+    <rect x="26" y="84" width="200" height="9" rx="4.5" fill="#3D3D3D"/>
+    <rect x="26" y="108" width="230" height="9" rx="4.5" fill="#3D3D3D"/>
+    <rect x="26" y="132" width="120" height="9" rx="4.5" fill="#3D3D3D"/>
+    <path d="M-34 232h398l-30-22H-4z" fill="#262626" stroke="#D9CBB8" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+
+  <!-- link -->
+  <g>
+    <path d="M700 415h200" stroke="#D9CBB8" stroke-width="4" stroke-dasharray="14 12" stroke-linecap="round"/>
+    <circle cx="800" cy="415" r="30" fill="#1F1F1F" stroke="#D9CBB8" stroke-width="3"/>
+    <path d="M786 415a14 14 0 0 1 28 0" fill="none" stroke="#D9CBB8" stroke-width="3" stroke-linecap="round"/>
+    <path d="M776 415a24 24 0 0 1 48 0" fill="none" stroke="#6B6459" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- controlled machine -->
+  <g transform="translate(970 300)">
+    <rect x="0" y="0" width="330" height="210" rx="10" fill="#262626" stroke="#4A4A4A" stroke-width="3"/>
+    <rect x="26" y="30" width="110" height="12" rx="6" fill="#6B6459"/>
+    <rect x="26" y="60" width="200" height="9" rx="4.5" fill="#3D3D3D"/>
+    <rect x="26" y="84" width="240" height="9" rx="4.5" fill="#3D3D3D"/>
+    <rect x="26" y="108" width="170" height="9" rx="4.5" fill="#3D3D3D"/>
+    <rect x="26" y="132" width="215" height="9" rx="4.5" fill="#3D3D3D"/>
+    <path d="M-34 232h398l-30-22H-4z" fill="#262626" stroke="#4A4A4A" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+
+  <text x="300" y="700" fill="#FAF7F2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="58" font-weight="600" letter-spacing="-1">Remote Laptop Control</text>
+  <text x="300" y="752" fill="#D9CBB8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="26" letter-spacing="2">React · JavaScript · React Router · CSS3</text>
+</svg>

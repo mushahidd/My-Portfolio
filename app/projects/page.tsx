@@ -2,7 +2,9 @@
 
 import { Navbar } from "@/components/navbar";
 import { PageTransition } from "@/components/page-transition";
+import { Footer } from "@/components/footer";
 import { Timeline } from "@/components/ui/timeline";
+import { ProjectCard } from "@/components/project-card";
 import { Github, ExternalLink, Globe } from "lucide-react";
 
 export default function ProjectsPage() {
@@ -10,7 +12,12 @@ export default function ProjectsPage() {
     {
       title: "StandupBot",
       content: (
-        <div>
+        <ProjectCard
+          title="StandupBot"
+          kicker="React 19 · FastAPI · OpenRouter"
+          image="/projects/standupbot.png"
+          url="shu-standup-bot.vercel.app"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
             AI-powered async standups for student project teams. Each teammate answers 3 questions in 90 seconds — the AI reads everyone's updates together and writes one brief that flags blockers, cross-person dependencies, new joiners, and missing members. Built for Iterate '26 Hackathon.
           </p>
@@ -43,13 +50,18 @@ export default function ProjectsPage() {
               <span className="font-semibold text-secondary">Tech:</span> React 19, TypeScript, Vite, TanStack Router, TanStack Query, Tailwind CSS v4, shadcn/ui, FastAPI, Python, SQLite, Google OAuth, OpenRouter
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },    
     {
       title: "Fluxnote",
       content: (
-        <div>
+        <ProjectCard
+          title="Fluxnote"
+          kicker="Next.js 16 · Yjs · Groq AI"
+          image="/projects/fluxnote.png"
+          url="fluxnote-devday.vercel.app"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
             A real-time collaborative canvas that turns sticky notes, decisions, and questions into a structured task board — with AI intent detection, live cursors, node-level permissions, and Yjs-powered CRDT sync. Brainstorm together, leave with action not chaos.
           </p>
@@ -82,13 +94,18 @@ export default function ProjectsPage() {
               <span className="font-semibold text-secondary">Tech:</span> Next.js 16, TypeScript, Tailwind CSS, shadcn/ui, Yjs, WebSockets, Node.js, Express, Supabase, Prisma, Groq AI
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
     {
       title: "KhataLens",
       content: (
-        <div>
+        <ProjectCard
+          title="KhataLens"
+          kicker="React 18 · FastAPI · Gemini 2.0"
+          image="/projects/khatalens.png"
+          url="khata-lens.vercel.app"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
             An AI-powered ledger management system for shopkeepers and small
             business owners. Snap a photo of your handwritten Khata notebook and
@@ -139,13 +156,18 @@ export default function ProjectsPage() {
               Python, SQLite, Supabase Auth, Gemini 2.0 Flash, OpenRouter
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
     {
       title: "ChainPass",
       content: (
-        <div>
+        <ProjectCard
+          title="ChainPass"
+          kicker="Next.js 14 · Solidity · Hardhat"
+          image="/projects/chainpass.png"
+          url="chain-pass-psl.vercel.app"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
             A blockchain-powered ticketing platform built for PSL-style events.
             NFT tickets (ERC-721) eliminate fake tickets and scalping through
@@ -195,13 +217,18 @@ export default function ProjectsPage() {
               OpenZeppelin, WireFluid Testnet
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
     {
       title: "AI Financial Co-Pilot",
       content: (
-        <div>
+        <ProjectCard
+          title="AI Financial Co-Pilot"
+          kicker="React 18 · FastAPI · Gemini API"
+          image="/projects/financial-copilot.png"
+          url="monetra-copilot.vercel.app"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
             An AI-powered financial management platform built for
             micro-businesses, freelancers, and solo entrepreneurs. It provides
@@ -253,14 +280,19 @@ export default function ProjectsPage() {
               (Supabase), Google Gemini API
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
 
     {
       title: "SyncScript",
       content: (
-        <div>
+        <ProjectCard
+          title="SyncScript"
+          kicker="Next.js 14 · Prisma · Pusher"
+          image="/projects/syncscript.png"
+          url="sync-script-iba.vercel.app"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
             A modern SaaS research management platform that enables teams to
             organize academic sources, upload and parse PDFs, generate
@@ -313,13 +345,18 @@ export default function ProjectsPage() {
               Prisma, NextAuth.js, OpenRouter API, Cloudinary, Pusher
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
     {
       title: "AI Exam Generator",
       content: (
-        <div>
+        <ProjectCard
+          title="AI Exam Generator"
+          kicker="React · Express · PostgreSQL"
+          image="/projects/qraft.png"
+          url="qraft-gen.vercel.app"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
             A modern full-stack web application for teachers and administrators
             to create, manage, and export professional exam papers with AI
@@ -370,13 +407,18 @@ export default function ProjectsPage() {
               Prisma, OpenRouter API (DeepSeek), JWT, Google OAuth
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
     {
       title: "Student Utility Hub",
       content: (
-        <div>
+        <ProjectCard
+          title="Student Utility Hub"
+          kicker="React · TypeScript · Vite"
+          image="/projects/student-utility-hub.png"
+          url="student-utility-hub.vercel.app"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
             A productivity web app designed for students to manage their
             academic schedules and resources efficiently.
@@ -423,13 +465,17 @@ export default function ProjectsPage() {
               TypeScript, TailwindCSS, Vite, Vercel
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
     {
       title: "Remote Laptop Control",
       content: (
-        <div>
+        <ProjectCard
+          title="Remote Laptop Control"
+          kicker="React · JavaScript · React Router"
+          image="/projects/remote-laptop.svg"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4 break-words">
             A remote control system that lets you lock or unlock your laptop
             from anywhere. Features a secure admin authentication system, clean
@@ -478,13 +524,18 @@ export default function ProjectsPage() {
               JavaScript, React Router, CSS3, Local Storage Auth
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
     {
       title: "Business Platform",
       content: (
-        <div>
+        <ProjectCard
+          title="Business Platform"
+          kicker="Python · FastAPI · PostgreSQL"
+          image="/projects/business-platform.png"
+          url="v0-community-network.vercel.app"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8 break-words">
             Created a Business Platform that handles complex backend operations
             with vibe code methodology. Designed with modern architecture
@@ -518,13 +569,17 @@ export default function ProjectsPage() {
               Code, Python, FastAPI, Jinja, PostgreSQL
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
     {
       title: "ERP",
       content: (
-        <div>
+        <ProjectCard
+          title="ERP"
+          kicker="Java · OOP · MySQL"
+          image="/projects/erp.png"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8 break-words">
             Developed an ERP (Enterprise Resource Planning) system using Java.
             Implemented complex business logic and enterprise-level architecture
@@ -546,13 +601,17 @@ export default function ProjectsPage() {
               OOP, Enterprise Patterns, MySQL Database
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
     {
       title: "Management System",
       content: (
-        <div>
+        <ProjectCard
+          title="Management System"
+          kicker="C · Database Concepts · System Design"
+          image="/projects/hms.png"
+        >
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8 break-words">
             Built a comprehensive Hospital Management System in C. This project
             introduced me to system design, data management, and building
@@ -574,7 +633,7 @@ export default function ProjectsPage() {
               Database Concepts, System Design
             </p>
           </div>
-        </div>
+        </ProjectCard>
       ),
     },
   ];
@@ -600,6 +659,8 @@ export default function ProjectsPage() {
 
         {/* Projects Timeline */}
         <Timeline data={timelineData} />
+
+        <Footer />
       </PageTransition>
     </div>
   );

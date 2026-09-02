@@ -1,5 +1,7 @@
 'use client';
 
+import { Footer } from "@/components/footer";
+
 import { Timeline } from "@/components/ui/timeline";
 import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import { AnimatedQuote } from "@/components/ui/animated-quote";
@@ -223,14 +225,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8 px-4 md:px-8 bg-muted/30">
-        <div className="max-w-7xl mx-auto text-center text-muted-foreground">
-          <p>© 2025 Mushahid Portfolio. All rights reserved.</p>
-          <p>Designed and developed by Mushahid.</p>
-          <p>Built with Vibe Code, Next.js, React, Tailwind CSS, and Aceternity UI.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

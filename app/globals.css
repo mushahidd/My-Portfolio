@@ -4,60 +4,90 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color theme to minimal aesthetic: Charcoal, Beige, Warm White, Monochrome Sand */
-  --background: #FAF7F2;
-  --foreground: #1C1C1C;
-  --card: #FFFFFF;
-  --card-foreground: #1C1C1C;
-  --popover: #FFFFFF;
-  --popover-foreground: #1C1C1C;
-  --primary: #2A2A2A;
-  --primary-foreground: #FAF7F2;
-  --secondary: #D9CBB8;
+  /* "Brick / Concrete" — grey-stone ground, near-black text, Brick Red actions.
+     Molten Lava #780000 is the pressed/deep state. --secondary is warm sand
+     #d9cbb8 because it has to work in two opposite roles: as text on the
+     near-black tech strips, and as a button background carrying dark text. */
+  --background: #e9e7e2;
+  --foreground: #232323;
+  --card: #f7f6f3;
+  --card-foreground: #232323;
+  --popover: #f7f6f3;
+  --popover-foreground: #232323;
+  --primary: #c1121f;
+  --primary-foreground: #fdf0d5;
+  --secondary: #d9cbb8;
   --secondary-foreground: #1C1C1C;
-  --muted: #EDE8E0;
-  --muted-foreground: #6B6B6B;
-  --accent: #D3CEC4;
-  --accent-foreground: #1C1C1C;
+  --muted: #dedbd4;
+  --muted-foreground: #5a5751;
+  --accent: #ded9d1;
+  --accent-foreground: #232323;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: #E8E3DB;
-  --input: #E8E3DB;
-  --ring: #2A2A2A;
-  --chart-1: #2A2A2A;
-  --chart-2: #D9CBB8;
-  --chart-3: #B6B1A9;
-  --chart-4: #D3CEC4;
-  --chart-5: #EDE8E0;
+  --border: #cfccc5;
+  --input: #cfccc5;
+  --ring: #c1121f;
+  --chart-1: #c1121f;
+  --chart-2: #780000;
+  --chart-3: #d9cbb8;
+  --chart-4: #cfccc5;
+  --chart-5: #dedbd4;
   --radius: 0.625rem;
+  /* Screenshot wash — its own token, never --secondary, so captures are
+     harmonised without being tinted by the accent. */
+  --shot-wash: #cfccc5;
+  /* Project card content */
+  --chip-ink: #780000;
+  --btn-bg: #c1121f;
+  --btn-bg-hover: #780000;
+  --btn-fg: #fdf0d5;
+  --btn-ghost-ink: #780000;
+  --btn-ghost-line: #c1121f;
+  --tech-bg: #1c1c1c;
+  --tech-line: rgb(193 18 31 / 0.35);
+  --tech-ink: #e9e7e2;
+  --tech-accent: #d9cbb8;
 }
 
 .dark {
-  /* Dark mode with monochrome sand palette */
-  --background: #1C1C1C;
-  --foreground: #FAF7F2;
-  --card: #2A2A2A;
-  --card-foreground: #FAF7F2;
-  --popover: #2A2A2A;
-  --popover-foreground: #FAF7F2;
-  --primary: #FAF7F2;
+  /* "Brick" dark — warm charcoal ground, papaya text. Text never goes red:
+     Brick Red on near-black fails contrast, so red survives as fills only. */
+  --background: #181414;
+  --foreground: #fdf0d5;
+  --card: #221c1c;
+  --card-foreground: #fdf0d5;
+  --popover: #221c1c;
+  --popover-foreground: #fdf0d5;
+  --primary: #fdf0d5;
   --primary-foreground: #1C1C1C;
-  --secondary: #D9CBB8;
+  --secondary: #d9cbb8;
   --secondary-foreground: #1C1C1C;
-  --muted: #3A3A3A;
-  --muted-foreground: #B6B1A9;
-  --accent: #D3CEC4;
+  --muted: #2e2424;
+  --muted-foreground: #b3a496;
+  --accent: #d8cfc2;
   --accent-foreground: #1C1C1C;
   --destructive: #F87171;
   --destructive-foreground: #1C1C1C;
-  --border: #3A3A3A;
-  --input: #3A3A3A;
-  --ring: #D9CBB8;
-  --chart-1: #D9CBB8;
-  --chart-2: #B6B1A9;
-  --chart-3: #D3CEC4;
-  --chart-4: #EDE8E0;
-  --chart-5: #A89B8F;
+  --border: #3a2e2e;
+  --input: #3a2e2e;
+  --ring: #d9cbb8;
+  --chart-1: #d9cbb8;
+  --chart-2: #c1121f;
+  --chart-3: #e0d5c3;
+  --chart-4: #f0e6d6;
+  --chart-5: #780000;
+  --shot-wash: #fdf0d5;
+  /* Project card content — red stays on fills, never on text */
+  --chip-ink: #fdf0d5;
+  --btn-bg: #c1121f;
+  --btn-bg-hover: #780000;
+  --btn-fg: #fdf0d5;
+  --btn-ghost-ink: #fdf0d5;
+  --btn-ghost-line: #c1121f;
+  --tech-bg: #120f0f;
+  --tech-line: rgb(193 18 31 / 0.4);
+  --tech-ink: #efe4d3;
+  --tech-accent: #d9cbb8;
 }
 
 @theme inline {
@@ -100,4 +130,404 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Project cards (projects timeline).
+   Collapsed, a card is only its screenshot plus a kicker; clicking expands it
+   into a modal that carries the description, chips, links and tech strip.
+   The shared-layout morph is framer-motion (layoutId) in project-card.tsx. */
+.project-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 1px 2px rgb(35 35 35 / 0.05), 0 12px 32px -18px rgb(35 35 35 / 0.3);
+}
+
+.dark .project-card {
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -18px rgb(0 0 0 / 0.8);
+}
+
+/* the collapsed card is a button, so reset the UA styling */
+.project-card-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-card-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgb(35 35 35 / 0.08), 0 30px 60px -24px rgb(35 35 35 / 0.45);
+}
+
+.dark .project-card-trigger:hover {
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.55), 0 30px 60px -24px rgb(0 0 0 / 1);
+}
+
+.project-card-trigger:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.project-card-shot {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+}
+
+.project-card-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card-trigger:hover .project-card-shot img {
+  transform: scale(1.04);
+}
+
+.project-card-wash {
+  position: absolute;
+  inset: 0;
+  background: var(--shot-wash);
+  mix-blend-mode: multiply;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.dark .project-card-wash {
+  mix-blend-mode: soft-light;
+  opacity: 0.22;
+}
+
+/* scrim so the kicker stays readable over any screenshot */
+.project-card-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(20 20 20 / 0.88) 0%,
+    rgb(20 20 20 / 0.35) 45%,
+    rgb(20 20 20 / 0.05) 100%
+  );
+  opacity: 0.92;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.project-card-trigger:hover .project-card-veil {
+  opacity: 1;
+}
+
+.project-card-kicker {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  right: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d9cbb8;
+  transform: translateY(4px);
+  transition: transform 0.3s ease;
+}
+
+.project-card-trigger:hover .project-card-kicker {
+  transform: translateY(0);
+}
+
+.project-card-open {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 5px 10px;
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-radius: 999px;
+  background: rgb(20 20 20 / 0.55);
+  backdrop-filter: blur(6px);
+  color: #f0ede8;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- expanded ---------- */
+.project-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.project-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--background) 72%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.project-modal {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  /* An explicit height, not max-height: the image pane resolves its own height
+     from this, and both panes stay the same size regardless of text length. */
+  height: min(560px, calc(100vh - 32px));
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: 0 2px 6px rgb(35 35 35 / 0.08), 0 30px 60px -24px rgb(35 35 35 / 0.45);
+}
+
+.dark .project-modal {
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.55), 0 30px 60px -24px rgb(0 0 0 / 1);
+}
+
+.project-modal-pane {
+  position: relative;
+  flex: none;
+  height: 200px;
+  overflow: hidden;
+  background: var(--muted);
+}
+
+/* Absolutely positioned so it fills the pane without relying on a percentage
+   height, which doesn't resolve against a flex-stretched parent. */
+.project-modal-pane img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.project-modal-details {
+  flex: 1;
+  min-width: 0;
+  padding: 22px;
+  overflow-y: auto;
+}
+
+.project-modal-kicker {
+  /* keep clear of the close button */
+  padding-right: 34px;
+  margin: 0 0 14px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.project-modal-title {
+  margin: 0 0 3px;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--card-foreground);
+}
+
+.project-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--card) 80%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--card-foreground);
+  cursor: pointer;
+}
+
+.project-modal-close:hover {
+  background: var(--muted);
+}
+
+@media (min-width: 760px) {
+  .project-modal {
+    flex-direction: row;
+  }
+
+  .project-modal-pane {
+    height: auto;
+    width: 46%;
+    align-self: stretch;
+  }
+}
+
+/* Browser chrome — carries the live domain inside the expanded view. */
+.project-card-chrome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-card-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.project-card-url {
+  margin-left: 6px;
+  padding: 2px 8px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted-foreground);
+  background: var(--card);
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card-trigger,
+  .project-card-shot img,
+  .project-card-veil,
+  .project-card-kicker {
+    transition: none;
+  }
+
+  .project-card-trigger:hover {
+    transform: none;
+  }
+
+  .project-card-trigger:hover .project-card-shot img {
+    transform: none;
+  }
+}
+
+/* Shared by the expanded modal's details pane and the text-only fallback card. */
+.project-card-body {
+  padding: 1.25rem;
+}
+
+/* Card content styling.
+   The twelve project blocks carry Tailwind utilities inline, so these rules are
+   deliberately structural (matched on href and shape, not on added classes) and
+   deliberately unlayered — unlayered CSS outranks Tailwind's layered utilities,
+   so no !important is needed. */
+
+/* description — must exclude the kicker, which is also a direct child <p> and
+   would otherwise lose its own smaller/muted styling to this higher-specificity rule */
+.project-card-body > p:not(.project-modal-kicker) {
+  margin: 0 0 14px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--card-foreground);
+}
+
+/* The JSX carries Tailwind spacing (mb-6, gap-2, gap-3) that doesn't match the
+   modal's rhythm, so the two rows that wrap chips and links are re-spaced here. */
+.project-card-body div:has(> span[class*="rounded-full"]) {
+  gap: 6px;
+  margin: 0 0 16px;
+}
+
+.project-card-body div:has(> a[href^="http"]) {
+  gap: 8px;
+  margin: 0;
+}
+
+/* feature chips */
+.project-card-body span[class*="rounded-full"] {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--muted);
+  color: var(--chip-ink);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* actions — solid for the live site, ghost for the repo */
+.project-card-body a[href^="http"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-size: 12.5px;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.project-card-body a[href^="http"] svg {
+  width: 14px;
+  height: 14px;
+}
+
+.project-card-body a[href^="http"]:hover {
+  background: var(--btn-bg-hover);
+  box-shadow: none;
+}
+
+.project-card-body a[href*="github.com"] {
+  background: transparent;
+  color: var(--btn-ghost-ink);
+  border-color: var(--btn-ghost-line);
+}
+
+.project-card-body a[href*="github.com"]:hover {
+  background: var(--muted);
+}
+
+/* tech strip */
+.project-card-body div[class*="bg-neutral-900"] {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--tech-line);
+  border-radius: 8px;
+  background: var(--tech-bg);
+}
+
+.project-card-body div[class*="bg-neutral-900"] p {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--tech-ink);
+}
+
+.project-card-body div[class*="bg-neutral-900"] span {
+  color: var(--tech-accent);
+  font-weight: 600;
 }

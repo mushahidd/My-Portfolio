@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/navbar";
 import { PageTransition } from "@/components/page-transition";
+import { Footer } from "@/components/footer";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Send, MapPin, MessageCircle, FileDown } from 'lucide-react';
 
@@ -74,7 +75,9 @@ export default function ContactPage() {
                     <link.icon size={32} className="text-secondary" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2">{link.name}</h3>
-                  <p className="text-muted-foreground text-sm">{link.description}</p>
+                  {/* break-words so the long email wraps inside the card instead
+                      of overflowing its padding and looking off-centre */}
+                  <p className="text-muted-foreground text-sm break-words">{link.description}</p>
                 </motion.a>
               ))}
             </div>
@@ -156,13 +159,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="border-t border-border py-8 px-4 md:px-8 bg-muted/30">
-          <div className="max-w-7xl mx-auto text-center text-muted-foreground">
-            <p>© {new Date().getFullYear()} Mushahid Portfolio. All rights reserved.</p>
-            <p className="mt-1">Built with Next.js, React, Tailwind CSS, and Framer Motion.</p>
-          </div>
-        </footer>
+        <Footer />
       </PageTransition>
     </div>
   );

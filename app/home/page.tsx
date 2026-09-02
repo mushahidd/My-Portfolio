@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/navbar";
 import { PageTransition } from "@/components/page-transition";
+import { Footer } from "@/components/footer";
 import { AnimatedQuote } from "@/components/ui/animated-quote";
 
 export default function HomePage() {
@@ -98,6 +99,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <Footer />
       </PageTransition>
     </div>
   );
